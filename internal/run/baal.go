@@ -3,13 +3,14 @@ package run
 import (
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/area"
-	"github.com/hectorgimenez/d2go/pkg/data/npc"
-	"github.com/hectorgimenez/d2go/pkg/data/object"
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/pather"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/area"
+	"github.com/Elanoran/d2go/pkg/data/npc"
+	"github.com/Elanoran/d2go/pkg/data/object"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/pather"
 )
 
 var baalThronePosition = data.Position{
@@ -33,9 +34,6 @@ func (s Baal) BuildActions() (actions []action.Action) {
 		s.builder.MoveToArea(area.TheWorldStoneKeepLevel3),
 		s.builder.MoveToArea(area.ThroneOfDestruction),
 		s.builder.MoveToCoords(baalThronePosition),
-		// Kill monsters inside Baal throne
-		s.builder.ClearAreaAroundPlayer(50),
-		s.builder.Buff(),
 	)
 
 	// Let's move to a safe area and open the portal in companion mode
@@ -47,6 +45,18 @@ func (s Baal) BuildActions() (actions []action.Action) {
 			}),
 		)
 	}
+	// Open portal if openTP: true
+	if config.Config.Game.Baal.OpenTP {
+		actions = append(actions, action.NewStepChain(func(_ data.Data) []step.Step {
+			return []step.Step{step.OpenPortal()}
+		}))
+	}
+
+	// Kill monsters inside Baal throne
+	actions = append(actions,
+		s.builder.ClearAreaAroundPlayer(50),
+		s.builder.Buff(),
+	)
 
 	// Come back to previous position
 	actions = append(actions, s.builder.MoveToCoords(baalThronePosition))

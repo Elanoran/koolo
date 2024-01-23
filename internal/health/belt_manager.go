@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/event/stat"
-	"github.com/hectorgimenez/koolo/internal/hid"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/event/stat"
+	"github.com/Elanoran/koolo/internal/hid"
 	"go.uber.org/zap"
 )
 

@@ -3,13 +3,13 @@ package run
 import (
 	"fmt"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/area"
-	"github.com/hectorgimenez/d2go/pkg/data/object"
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/pather"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/area"
+	"github.com/Elanoran/d2go/pkg/data/object"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/pather"
 	"go.uber.org/zap"
 )
 

@@ -3,16 +3,16 @@ package action
 import (
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/item"
-	"github.com/hectorgimenez/d2go/pkg/data/npc"
-	"github.com/hectorgimenez/d2go/pkg/data/stat"
-	"github.com/hectorgimenez/d2go/pkg/itemfilter"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/town"
-	"github.com/hectorgimenez/koolo/internal/ui"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/item"
+	"github.com/Elanoran/d2go/pkg/data/npc"
+	"github.com/Elanoran/d2go/pkg/data/stat"
+	"github.com/Elanoran/d2go/pkg/itemfilter"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/town"
+	"github.com/Elanoran/koolo/internal/ui"
 	"go.uber.org/zap"
 )
 

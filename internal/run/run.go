@@ -4,10 +4,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/health"
-	"github.com/hectorgimenez/koolo/internal/reader"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/health"
+	"github.com/Elanoran/koolo/internal/reader"
 	"go.uber.org/zap"
 )
 
@@ -78,6 +78,11 @@ func (f *Factory) BuildRuns() (runs []Run) {
 			runs = append(runs, Countess{baseRun})
 		case "andariel":
 			runs = append(runs, Andariel{baseRun})
+		case "mausoleum":
+			runs = append(runs, Mausoleum{
+				baseRun: baseRun,
+				bm:      f.bm,
+			})
 		case "summoner":
 			runs = append(runs, Summoner{baseRun})
 		case "mephisto":

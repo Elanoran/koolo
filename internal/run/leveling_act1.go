@@ -1,18 +1,18 @@
 package run
 
 import (
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/area"
-	"github.com/hectorgimenez/d2go/pkg/data/item"
-	"github.com/hectorgimenez/d2go/pkg/data/npc"
-	"github.com/hectorgimenez/d2go/pkg/data/object"
-	"github.com/hectorgimenez/d2go/pkg/data/stat"
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/helper"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/ui"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/area"
+	"github.com/Elanoran/d2go/pkg/data/item"
+	"github.com/Elanoran/d2go/pkg/data/npc"
+	"github.com/Elanoran/d2go/pkg/data/object"
+	"github.com/Elanoran/d2go/pkg/data/stat"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/helper"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/ui"
 )
 
 const scrollOfInifuss = "ScrollOfInifuss"

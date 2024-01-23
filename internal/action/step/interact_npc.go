@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/npc"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/pather"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/npc"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/pather"
 )
 
 type InteractNPCStep struct {

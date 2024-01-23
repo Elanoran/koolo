@@ -3,8 +3,8 @@ debug:
   renderMap: false # Render current map data into 'cg.png' file
 
 logFilePath: log.txt
-maxGameLength: 500 # Max game length (in seconds), bot will try to quit game arrived that point
-D2LoDPath: 'E:\games\Diablo II'
+maxGameLength: 4200 # Max game length (in seconds), bot will try to quit game arrived that point
+D2LoDPath: 'C:\d2\Diablo II'
 
 # In order to use to Discord Bot, you need the Application Token. https://discord.com/developers/docs/intro
 discord:
@@ -42,17 +42,17 @@ bindings:
   standStill: shift
   swapWeapon: w
   teleport: f1
-  tp: f4
+  tp: f6
   CTABattleCommand: f6
   CTABattleOrders: f7
 
   # Class specific bindings
   sorceress:
     blizzard: f2
-    staticField: f3
-    frozenArmor: f5
+    staticField: f5
+    frozenArmor: f3
     fireBall: f2 # During leveling only
-    nova: f2
+    nova: f7
     energyShield: f8
 
   paladin:
@@ -64,10 +64,10 @@ bindings:
 
 inventory:
   inventoryLock:
-    - [ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 ] # 0: Item locked and won't be moved.
-    - [ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 ] # 1: Item unlocked, it will be stashed, sold or dropped.
-    - [ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 ]
-    - [ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 ]
+    - [ 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 ] # 0: Item locked and won't be moved.
+    - [ 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 ] # 1: Item unlocked, it will be stashed, sold or dropped.
+    - [ 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 ]
+    - [ 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 ]
 
   beltColumns: # Amount of columns for each type of potion, sum of all should not be more than 4
     healing: 2
@@ -78,31 +78,33 @@ character:
   class: sorceress # Allowed values: sorceress, lightning, hammerdin, paladin (leveling only)
   castingFrames: 8 # https://diablo2.diablowiki.net/Breakpoints#Faster_Cast_Rate
   useMerc: true
+  buyPots: true # Go to town to buy pots if needed
 
 game:
   clearTPArea: true # Will clear the TP area before clicking it
-  difficulty: hell # Allowed values: normal, nightmare, hell
-  randomizeRuns: true # Will randomize the order of the runs each game
+  difficulty: nightmare # Allowed values: normal, nightmare, hell
+  randomizeRuns: false # Will randomize the order of the runs each game
   # Just add the runs you want to do and they will be executed respecting the order, unless randomizeRuns is set to true
-  # Available runs: countess, andariel, ancient_tunnels, summoner, mephisto, council, eldritch, pindleskin, nihlathak,
+  # Available runs: countess, andariel, mausoleum, ancient_tunnels, summoner, mephisto, council, eldritch, pindleskin, nihlathak,
   #                 tristram, lower_kurast, stony_tomb, pit, arachnid_lair, tal_rasha_tombs, baal, diablo, cows, terror_zone
   # leveling: there is a "leveling" run, in combination with "sorceress or paladin" class will be able to start leveling character from level 1 (don't expect too much)
   # terror_zone: will detect current TZ and clear it
-  runs: [stony_tomb, pit, arachnid_lair]
+  runs: [baal, pindleskin]
 
   # Specific runs settings
   pindleskin:
     skipOnImmunities: [ ] # Allowed values: cold, fire, light, poison
   mephisto:
-    killCouncilMembers: true # Will kill the council members after killing Mephisto
-    openChests: true # Will open chests after killing Mephisto
+    killCouncilMembers: false # Will kill the council members after killing Mephisto
+    openChests: false # Will open chests after killing Mephisto
   tristram:
     focusOnElitePacks: false # Will clear only Elite monsters
     clearPortal: true # Kills Rakanishu and makes easier selecting the portal
   nihlathak:
     clearArea: true
   baal:
-    killBaal: false
+    openTP: true
+    killBaal: true
   terrorZone:
     focusOnElitePacks: false # Will clear only Elite monsters
     skipOnImmunities: [ ] # Allowed values: cold, fire, light, poison
@@ -183,11 +185,22 @@ game:
       - 128 # The Worldstone Keep Level 1 (Will do Baal run)
 
 companion:
-  enabled: false
+  enabled: true
   leader: true
   leaderName: ''
   remote: discord # Only discord supported, telegram doesn't allow interacting between bots
-  gameNameTemplate:
+  gameNameTemplate: charactername-
+  gamePass: password
+
+db:
+  enabled: false # Enable writing data to a mysql server db
+  hostIp: 192.168.1.0 # Mysql host ip
+  portNumber: 3306 # Mysql port (defaul 3306)
+  userName: d2rbot # Mysql username
+  password: SecretPass # Mysql password
+  dbName: d2r # Mysql database name
+  botName: MrBot # Bot name, VM or identifier
+  botCharName: BotChar # Used to identify what character is running
 
 # Gambling settings. If enabled, bot will start gambling when all the gold stash tabs are full.
 # While gold > 500k it will iterate over the items list trying to buy one of each item type.

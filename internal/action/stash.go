@@ -2,19 +2,21 @@ package action
 
 import (
 	"fmt"
+	"strings"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/area"
-	"github.com/hectorgimenez/d2go/pkg/data/item"
-	"github.com/hectorgimenez/d2go/pkg/data/object"
-	"github.com/hectorgimenez/d2go/pkg/data/stat"
-	"github.com/hectorgimenez/d2go/pkg/itemfilter"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	stat2 "github.com/hectorgimenez/koolo/internal/event/stat"
-	"github.com/hectorgimenez/koolo/internal/helper"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/ui"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/area"
+	"github.com/Elanoran/d2go/pkg/data/item"
+	"github.com/Elanoran/d2go/pkg/data/object"
+	"github.com/Elanoran/d2go/pkg/data/stat"
+	"github.com/Elanoran/d2go/pkg/itemfilter"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	stat2 "github.com/Elanoran/koolo/internal/event/stat"
+
+	"github.com/Elanoran/koolo/internal/helper"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/ui"
 )
 
 const (
@@ -111,6 +113,46 @@ func (b *Builder) stashGold(d data.Data) {
 	b.logger.Info("All stash tabs are full of gold :D")
 }
 
+func (b *Builder) logStashItem(i data.Item) {
+	// Check if the item has any stats
+	if len(i.Stats) == 0 {
+		b.logger.Debug("Item has no stats")
+		return
+	}
+
+	// Initialize an empty slice to store the stats information
+	var statsInfo []string
+
+	// Iterate through each stat in the item's stats
+	for statID, statData := range i.Stats {
+		// Construct a string for each stat
+		statInfo := fmt.Sprintf("%s %d", statID, statData.Value)
+
+		// Add the statInfo to the statsInfo slice
+		statsInfo = append(statsInfo, statInfo)
+	}
+
+	// Join the statsInfo slice into a single string
+	statsString := strings.Join(statsInfo, ", ")
+
+	// Construct the final textData
+	textData := fmt.Sprintf("Item %s [%d] stashed - Stats: %s", i.Name, i.Quality, statsString)
+
+	// Insert item into DB Log
+	err := helper.DbLogText(textData)
+	if err != nil {
+		b.logger.Debug(fmt.Sprintf("%s", err))
+	}
+}
+
+func (b *Builder) storeStashItem(i data.Item) {
+	// Insert item into DB
+	err := helper.DbLogItem(i)
+	if err != nil {
+		b.logger.Debug(fmt.Sprintf("%s", err))
+	}
+}
+
 func (b *Builder) stashInventory(d data.Data, forceStash bool) {
 	currentTab := 1
 	switchTab(currentTab)
@@ -122,6 +164,9 @@ func (b *Builder) stashInventory(d data.Data, forceStash bool) {
 		for currentTab < 5 {
 			if b.stashItemAction(i, forceStash) {
 				b.logger.Debug(fmt.Sprintf("Item %s [%d] stashed", i.Name, i.Quality))
+				// Log the item's stats along with its name and quality
+				b.logStashItem(i)
+				b.storeStashItem(i)
 				break
 			}
 			if currentTab == 5 {

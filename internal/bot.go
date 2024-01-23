@@ -6,14 +6,16 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/event"
-	"github.com/hectorgimenez/koolo/internal/event/stat"
-	"github.com/hectorgimenez/koolo/internal/health"
-	"github.com/hectorgimenez/koolo/internal/reader"
-	"github.com/hectorgimenez/koolo/internal/run"
+	d2goStat "github.com/Elanoran/d2go/pkg/data/stat"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/event"
+	"github.com/Elanoran/koolo/internal/event/stat"
+	"github.com/Elanoran/koolo/internal/health"
+	"github.com/Elanoran/koolo/internal/helper"
+	"github.com/Elanoran/koolo/internal/reader"
+	"github.com/Elanoran/koolo/internal/run"
 	"go.uber.org/zap"
 )
 
@@ -91,6 +93,17 @@ func (b *Bot) Run(ctx context.Context, firstRun bool, runs []run.Run) (err error
 
 				if loadingScreensDetected >= 15 {
 					b.logger.Debug("Load completed, continuing execution")
+					// Update BotInfo
+					err := helper.DbupsertBotInfoRunning(d)
+					if err != nil {
+						b.logger.Debug(fmt.Sprintf("%s", err))
+					}
+					// Update
+					dbplevel := d.PlayerUnit.Stats[d2goStat.Level]
+					err2 := helper.DbupsertPlayerInfoRunning(d, dbplevel)
+					if err2 != nil {
+						b.logger.Debug(fmt.Sprintf("%s", err))
+					}
 				}
 				loadingScreensDetected = 0
 
@@ -113,6 +126,12 @@ func (b *Bot) Run(ctx context.Context, firstRun bool, runs []run.Run) (err error
 					if errors.Is(err, action.ErrNoMoreSteps) {
 						if len(actions)-1 == k {
 							b.logger.Info(fmt.Sprintf("Run %s finished, length: %0.2fs", r.Name(), time.Since(runStart).Seconds()))
+							// Insert finished run into DB
+							//textData := fmt.Sprintf("Run %s finished, length: %0.2fs", r.Name(), time.Since(runStart).Seconds())
+							//err := helper.DbLogText(textData)
+							//if err != nil {
+							//	b.logger.Debug(fmt.Sprintf("%s", err))
+							//}
 							stat.FinishCurrentRun(event.Kill)
 							running = false
 						}

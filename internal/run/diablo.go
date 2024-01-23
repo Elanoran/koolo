@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/area"
-	"github.com/hectorgimenez/d2go/pkg/data/npc"
-	"github.com/hectorgimenez/d2go/pkg/data/object"
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/health"
-	"github.com/hectorgimenez/koolo/internal/pather"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/area"
+	"github.com/Elanoran/d2go/pkg/data/npc"
+	"github.com/Elanoran/d2go/pkg/data/object"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/health"
+	"github.com/Elanoran/koolo/internal/pather"
 	"go.uber.org/zap"
 )
 
@@ -166,6 +166,9 @@ func (a Diablo) BuildActions() (actions []action.Action) {
 	actions = append(actions, action.NewChain(func(d data.Data) []action.Action {
 		_, isLevelingChar := a.char.(action.LevelingCharacter)
 		if isLevelingChar && (a.bm.ShouldBuyPotions(d) || (config.Config.Character.UseMerc && d.MercHPPercent() <= 0)) {
+			return a.builder.InRunReturnTownRoutine()
+		}
+		if config.Config.Character.BuyPots && (a.bm.ShouldBuyPotions(d)) {
 			return a.builder.InRunReturnTownRoutine()
 		}
 

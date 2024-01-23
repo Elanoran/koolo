@@ -1,8 +1,8 @@
 package action
 
 import (
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/koolo/internal/pather"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/koolo/internal/pather"
 	"go.uber.org/zap"
 )
 

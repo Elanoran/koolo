@@ -7,12 +7,12 @@ import (
 	"os"
 	"time"
 
+	"github.com/Elanoran/koolo/internal/event/stat"
+	"github.com/Elanoran/koolo/internal/helper"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/reader"
+	"github.com/Elanoran/koolo/internal/run"
 	"github.com/go-vgo/robotgo"
-	"github.com/hectorgimenez/koolo/internal/event/stat"
-	"github.com/hectorgimenez/koolo/internal/helper"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/reader"
-	"github.com/hectorgimenez/koolo/internal/run"
 	"github.com/lxn/win"
 	"go.uber.org/zap"
 )
@@ -131,4 +131,15 @@ func (s *baseSupervisor) logGameStart(runs []run.Run) {
 	}
 	stat.Status.TotalGames++
 	s.logger.Info(fmt.Sprintf("Starting Game #%d. Run list: %s", stat.Status.TotalGames, runNames[:len(runNames)-2]))
+	// Update BotInfo
+	err := helper.DbupsertBotInfoStart(stat.Status.TotalGames, runNames[:len(runNames)-2])
+	if err != nil {
+		s.logger.Debug(fmt.Sprintf("%s", err))
+	}
+	// Insert start run into DB
+	//textData := fmt.Sprintf("Starting Game #%d. Run list: %s", stat.Status.TotalGames, runNames[:len(runNames)-2])
+	//err := helper.DbLogText(textData)
+	//if err != nil {
+	//	s.logger.Debug(fmt.Sprintf("%s", err))
+	//}
 }

@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/hectorgimenez/d2go/pkg/data/difficulty"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/reader"
-	"github.com/hectorgimenez/koolo/internal/ui"
+	"github.com/Elanoran/d2go/pkg/data/difficulty"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/reader"
+	"github.com/Elanoran/koolo/internal/ui"
 )
 
 type GameManager struct {
@@ -118,7 +118,11 @@ func (gm *GameManager) CreateOnlineGame(gameCounter int) (string, error) {
 	hid.Click(hid.LeftButton)
 	Sleep(200)
 	hid.PressKeyCombination("lctrl", "a")
-	hid.PressKey("x")
+	//hid.PressKey("x")
+	gamePass := config.Config.Companion.GamePass
+	for _, ch := range gamePass {
+		hid.PressKey(fmt.Sprintf("%c", ch))
+	}
 	hid.PressKey("enter")
 
 	for i := 0; i < 30; i++ {

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/koolo/internal/event"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/koolo/internal/event"
 )
 
 var Status = GameStatus{}

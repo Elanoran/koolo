@@ -3,14 +3,14 @@ package action
 import (
 	"fmt"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/d2go/pkg/data/item"
-	"github.com/hectorgimenez/d2go/pkg/data/stat"
-	"github.com/hectorgimenez/koolo/internal/action/step"
-	"github.com/hectorgimenez/koolo/internal/config"
-	"github.com/hectorgimenez/koolo/internal/helper"
-	"github.com/hectorgimenez/koolo/internal/hid"
-	"github.com/hectorgimenez/koolo/internal/ui"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data/item"
+	"github.com/Elanoran/d2go/pkg/data/stat"
+	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/Elanoran/koolo/internal/config"
+	"github.com/Elanoran/koolo/internal/helper"
+	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/Elanoran/koolo/internal/ui"
 )
 
 func (b *Builder) IdentifyAll(skipIdentify bool) *Chain {
@@ -22,6 +22,8 @@ func (b *Builder) IdentifyAll(skipIdentify bool) *Chain {
 			b.logger.Debug("No items to identify...")
 			return
 		}
+
+		helper.Sleep(2000)
 
 		idTome, found := d.Items.Find(item.TomeOfIdentify, item.LocationInventory)
 		if !found {

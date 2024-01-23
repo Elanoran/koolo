@@ -5,8 +5,8 @@ import (
 	"context"
 	"image/png"
 
+	"github.com/Elanoran/koolo/internal/event"
 	"github.com/bwmarrin/discordgo"
-	"github.com/hectorgimenez/koolo/internal/event"
 )
 
 func (b *Bot) Handle(_ context.Context, m event.Message) error {

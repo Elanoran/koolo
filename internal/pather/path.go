@@ -1,8 +1,8 @@
 package pather
 
 import (
+	"github.com/Elanoran/d2go/pkg/data"
 	"github.com/beefsack/go-astar"
-	"github.com/hectorgimenez/d2go/pkg/data"
 )
 
 type Pather struct {

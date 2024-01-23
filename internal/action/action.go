@@ -3,7 +3,7 @@ package action
 import (
 	"errors"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/Elanoran/d2go/pkg/data"
 	"go.uber.org/zap"
 )
 

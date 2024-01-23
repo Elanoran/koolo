@@ -3,8 +3,8 @@ package action
 import (
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data"
-	"github.com/hectorgimenez/koolo/internal/action/step"
+	"github.com/Elanoran/d2go/pkg/data"
+	"github.com/Elanoran/koolo/internal/action/step"
 )
 
 func (b *Builder) Wait(duration time.Duration) *StepChainAction {

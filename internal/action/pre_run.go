@@ -1,6 +1,6 @@
 package action
 
-import "github.com/hectorgimenez/koolo/internal/config"
+import "github.com/Elanoran/koolo/internal/config"
 
 func (b *Builder) PreRun(firstRun bool) []Action {
 	if config.Config.Companion.Enabled && !config.Config.Companion.Leader {

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	koolo "github.com/hectorgimenez/koolo/internal"
+	koolo "github.com/Elanoran/koolo/internal"
 
+	"github.com/Elanoran/koolo/internal/event/stat"
 	"github.com/bwmarrin/discordgo"
-	"github.com/hectorgimenez/koolo/internal/event/stat"
 )
 
 type Bot struct {

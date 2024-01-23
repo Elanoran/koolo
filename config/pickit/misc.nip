@@ -2,6 +2,7 @@
 //[type] == gold # [gold] >= 750
 //[name] == scrolloftownportal
 //[name] == scrollofidentify
+[name] == Key # # [MaxQuantity] == 12
 
 // ubers
 [name] == keyofterror
@@ -10,16 +11,16 @@
 //[name] == keyofterror 		# # [maxquantity] == 10
 //[name] == keyofhate 			# # [maxquantity] == 10
 //[name] == keyofdestruction 	# # [maxquantity] == 10
-//[name] == mephistosbrain
-//[name] == baalseye
-//[name] == diabloshorn
+[name] == mephistosbrain
+[name] == baalseye
+[name] == diabloshorn
 
 // tokens
-//[name] == twistedessenceofsuffering 		# # [maxquantity] == 2
-//[name] == chargedessenceofhatred 			# # [maxquantity] == 2
-//[name] == burningessenceofterror 			# # [maxquantity] == 2
-//[name] == festeringessenceofdestruction 	# # [maxquantity] == 2
-//[name] == tokenofabsolution 				# # [maxquantity] == 5
+[name] == twistedessenceofsuffering 		# # [maxquantity] == 2
+[name] == chargedessenceofhatred 			# # [maxquantity] == 2
+[name] == burningessenceofterror 			# # [maxquantity] == 2
+[name] == festeringessenceofdestruction 	# # [maxquantity] == 2
+[name] == tokenofabsolution 				# # [maxquantity] == 5
 
 // runes
 //[name] == elrune 	# # [maxquantity] == 1
@@ -34,15 +35,15 @@
 //[name] == thulrune 	# # [maxquantity] == 1
 //[name] == amnrune 	# # [maxquantity] == 1
 //[name] == solrune 	# # [maxquantity] == 1
-//[name] == shaelrune # # [maxquantity] == 1
-//[name] == dolrune 	# # [maxquantity] == 1
-//[name] == helrune 	# # [maxquantity] == 1
-//[name] == iorune 	# # [maxquantity] == 1
-//[name] == lumrune 	# # [maxquantity] == 1
-//[name] == korune 	# # [maxquantity] == 1
-//[name] == falrune 	# # [maxquantity] == 1
-//[name] == lemrune 	# # [maxquantity] == 1
-//[name] == pulrune 	# # [maxquantity] == 1
+[name] == shaelrune # # [maxquantity] == 1
+[name] == dolrune 	# # [maxquantity] == 1
+[name] == helrune 	# # [maxquantity] == 1
+[name] == iorune 	# # [maxquantity] == 1
+[name] == lumrune 	# # [maxquantity] == 1
+[name] == korune 	# # [maxquantity] == 1
+[name] == falrune 	# # [maxquantity] == 1
+[name] == lemrune 	# # [maxquantity] == 1
+[name] == pulrune 	# # [maxquantity] == 1
 [name] == umrune 	# # [maxquantity] == 5
 [name] == malrune 	# # [maxquantity] == 10
 [name] == istrune 	# # [maxquantity] == 10
@@ -95,6 +96,6 @@
 
 // potions
 [name] == superhealingpotion
-//[name] == supermanapotion
+[name] == supermanapotion
 [name] == rejuvenationpotion
 [name] == fullrejuvenationpotion

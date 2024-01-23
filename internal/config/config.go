@@ -5,12 +5,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/hectorgimenez/d2go/pkg/data/area"
-	"github.com/hectorgimenez/d2go/pkg/data/item"
-	"github.com/hectorgimenez/d2go/pkg/nip"
+	"github.com/Elanoran/d2go/pkg/data/area"
+	"github.com/Elanoran/d2go/pkg/data/item"
+	"github.com/Elanoran/d2go/pkg/nip"
 
-	"github.com/hectorgimenez/d2go/pkg/data/difficulty"
-	"github.com/hectorgimenez/d2go/pkg/data/stat"
+	"github.com/Elanoran/d2go/pkg/data/difficulty"
+	"github.com/Elanoran/d2go/pkg/data/stat"
 	"gopkg.in/yaml.v3"
 )
 
@@ -90,8 +90,10 @@ type StructConfig struct {
 	} `yaml:"inventory"`
 	Character struct {
 		Class         string `yaml:"class"`
+		Build         string `yaml:"build"`
 		CastingFrames int    `yaml:"castingFrames"`
 		UseMerc       bool   `yaml:"useMerc"`
+		BuyPots       bool   `yaml:"buyPots"`
 	} `yaml:"character"`
 	Game struct {
 		ClearTPArea   bool                  `yaml:"clearTPArea"`
@@ -113,6 +115,7 @@ type StructConfig struct {
 			ClearArea bool `yaml:"clearArea"`
 		} `yaml:"nihlathak"`
 		Baal struct {
+			OpenTP   bool `yaml:"openTP"`
 			KillBaal bool `yaml:"killBaal"`
 		} `yaml:"baal"`
 		TerrorZone struct {
@@ -128,6 +131,7 @@ type StructConfig struct {
 		LeaderName       string `yaml:"leaderName"`
 		Remote           string `yaml:"remote"`
 		GameNameTemplate string `yaml:"gameNameTemplate"`
+		GamePass         string `yaml:"gamePass"`
 	} `yaml:"companion"`
 	Gambling struct {
 		Enabled bool        `yaml:"enabled"`
@@ -137,6 +141,16 @@ type StructConfig struct {
 		CastDuration time.Duration
 		Rules        []nip.Rule
 	}
+	Db struct {
+		Enabled     bool   `yaml:"enabled"`
+		Host        string `yaml:"hostIp"`
+		Port        string `yaml:"portNumber"`
+		User        string `yaml:"userName"`
+		Pass        string `yaml:"password"`
+		DbName      string `yaml:"dbName"`
+		BotName     string `yaml:"botName"`
+		BotCharName string `yaml:"botCharName"`
+	} `yaml:"db"`
 }
 
 // Load reads the config.ini file and returns a Config struct filled with data from the ini file

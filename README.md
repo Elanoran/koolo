@@ -37,7 +37,7 @@ Koolo will be clicking, moving the mouse, pressing keys... Basically this makes 
 bot. It's recommended to run it on a [virtual machine](https://github.com/jamesstringerparsec/Easy-GPU-PV).
 
 - If you haven't done yet, install **Diablo II: LOD 1.13c**
-- [Download](https://github.com/hectorgimenez/koolo/releases) the latest Koolo release, or alternatively you can [build it from source](#development-environment)
+- [Download](https://github.com/Elanoran/koolo/releases) the latest Koolo release, or alternatively you can [build it from source](#development-environment)
 - Extract the zip file in a directory of your choice.
 - Open `config/config.yaml` with your favorite text editor and ensure `D2LoDPath` config is pointing to your **Diablo II: LOD 1.13c** installation directory.
 - Configure custom bot settings under `config/config.yaml` and `config/pickit/*.nip` files for pickit rules.
@@ -50,12 +50,12 @@ bot. It's recommended to run it on a [virtual machine](https://github.com/jamess
 Koolo reads game memory and interacts with the game simulating clicks/keystrokes.
 It uses the following third party libraries:
 
-- https://github.com/hectorgimenez/d2go
+- https://github.com/Elanoran/d2go
 - https://github.com/hectorgimenez/diablo2 (forked
   from [blacha's repo](https://github.com/blacha/diablo2/tree/master/packages/map))
 
 ## Development environment
-**Note:** This is only required if you want to build the project from source. If you want to run the bot, you can just download the [latest release](https://github.com/hectorgimenez/koolo/releases).
+**Note:** This is only required if you want to build the project from source. If you want to run the bot, you can just download the [latest release](https://github.com/Elanoran/koolo/releases).
 
 Setting the development environment is pretty straightforward, but the following dependencies are **required** to build the project.
 
@@ -70,7 +70,7 @@ Setting the development environment is pretty straightforward, but the following
 ### Building from source
 Open the terminal and run the following commands in project root directory:
 ```shell
-git clone https://github.com/hectorgimenez/koolo.git
+git clone https://github.com/Elanoran/koolo.git
 cd koolo
 prepare_env.bat
 build.bat

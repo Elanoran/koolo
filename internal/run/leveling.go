@@ -1,9 +1,9 @@
 package run
 
 import (
-	"github.com/hectorgimenez/koolo/internal/action"
-	"github.com/hectorgimenez/koolo/internal/health"
-	"github.com/hectorgimenez/koolo/internal/reader"
+	"github.com/Elanoran/koolo/internal/action"
+	"github.com/Elanoran/koolo/internal/health"
+	"github.com/Elanoran/koolo/internal/reader"
 )
 
 type Leveling struct {

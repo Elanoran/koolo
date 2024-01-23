@@ -1,10 +1,10 @@
 package action
 
 import (
-	"github.com/hectorgimenez/koolo/internal/health"
-	"github.com/hectorgimenez/koolo/internal/reader"
-	"github.com/hectorgimenez/koolo/internal/town"
-	"github.com/hectorgimenez/koolo/internal/ui"
+	"github.com/Elanoran/koolo/internal/health"
+	"github.com/Elanoran/koolo/internal/reader"
+	"github.com/Elanoran/koolo/internal/town"
+	"github.com/Elanoran/koolo/internal/ui"
 	"go.uber.org/zap"
 )
 
