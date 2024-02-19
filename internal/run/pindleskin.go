@@ -1,11 +1,11 @@
 package run
 
 import (
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/d2go/pkg/data/object"
-	"github.com/Elanoran/d2go/pkg/data/stat"
-	"github.com/Elanoran/koolo/internal/action"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/d2go/pkg/data/object"
+	"github.com/hectorgimenez/d2go/pkg/data/stat"
+	"github.com/hectorgimenez/koolo/internal/action"
 )
 
 var fixedPlaceNearRedPortal = data.Position{

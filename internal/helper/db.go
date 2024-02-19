@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/koolo/internal/config"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/koolo/internal/config"
 )
 
 // Function to open a database connection
@@ -266,8 +266,8 @@ func DbLogItem(item data.Item) error {
 	}
 
 	// Perform database operation: insert the item into the items table
-	_, err = db.Exec("INSERT INTO items (item_name, item_quality, bot_char_name, stats) VALUES (?, ?, ?, ?)",
-		item.Name, item.Quality.ToString(), config.Config.Db.BotCharName, statsJSON)
+	_, err = db.Exec("INSERT INTO items (item_name, item_quality, ethereal, bot_char_name, stats) VALUES (?, ?, ?, ?, ?)",
+		item.Name, item.Quality.ToString(), item.Ethereal, config.Config.Db.BotCharName, statsJSON)
 	if err != nil {
 		return fmt.Errorf("DbLogItem: error inserting data into the database: %v", err)
 	}

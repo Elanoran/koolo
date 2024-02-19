@@ -3,10 +3,10 @@ package step
 import (
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/helper"
-	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/hid"
 )
 
 type OpenPortalStep struct {

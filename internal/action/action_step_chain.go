@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/koolo/internal/action/step"
 	"go.uber.org/zap"
 )
 

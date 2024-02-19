@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/item"
-	"github.com/Elanoran/d2go/pkg/data/stat"
-	"github.com/Elanoran/d2go/pkg/itemfilter"
-	"github.com/Elanoran/koolo/internal/action/step"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/pather"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/item"
+	"github.com/hectorgimenez/d2go/pkg/data/stat"
+	"github.com/hectorgimenez/d2go/pkg/itemfilter"
+	"github.com/hectorgimenez/koolo/internal/action/step"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/pather"
 	"go.uber.org/zap"
 )
 

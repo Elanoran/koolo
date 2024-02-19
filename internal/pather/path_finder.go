@@ -4,13 +4,13 @@ import (
 	"math"
 	"math/rand"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/helper"
-	"github.com/Elanoran/koolo/internal/hid"
-	"github.com/Elanoran/koolo/internal/reader"
 	"github.com/beefsack/go-astar"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/hid"
+	"github.com/hectorgimenez/koolo/internal/reader"
 )
 
 func GetPath(d data.Data, to data.Position, blacklistedCoords ...[2]int) (path *Pather, distance int, found bool) {

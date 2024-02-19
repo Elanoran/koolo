@@ -7,12 +7,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/Elanoran/koolo/internal/event/stat"
-	"github.com/Elanoran/koolo/internal/helper"
-	"github.com/Elanoran/koolo/internal/hid"
-	"github.com/Elanoran/koolo/internal/reader"
-	"github.com/Elanoran/koolo/internal/run"
 	"github.com/go-vgo/robotgo"
+	"github.com/hectorgimenez/koolo/internal/event/stat"
+	"github.com/hectorgimenez/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/hid"
+	"github.com/hectorgimenez/koolo/internal/reader"
+	"github.com/hectorgimenez/koolo/internal/run"
 	"github.com/lxn/win"
 	"go.uber.org/zap"
 )

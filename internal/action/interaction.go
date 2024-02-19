@@ -1,11 +1,11 @@
 package action
 
 import (
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/d2go/pkg/data/npc"
-	"github.com/Elanoran/d2go/pkg/data/object"
-	"github.com/Elanoran/koolo/internal/action/step"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/d2go/pkg/data/npc"
+	"github.com/hectorgimenez/d2go/pkg/data/object"
+	"github.com/hectorgimenez/koolo/internal/action/step"
 )
 
 func (b *Builder) InteractNPC(npc npc.ID, additionalSteps ...step.Step) *Chain {

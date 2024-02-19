@@ -7,11 +7,11 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/event"
-	"github.com/Elanoran/koolo/internal/helper"
-	"github.com/Elanoran/koolo/internal/reader"
-	"github.com/Elanoran/koolo/internal/run"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/event"
+	"github.com/hectorgimenez/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/reader"
+	"github.com/hectorgimenez/koolo/internal/run"
 	"go.uber.org/zap"
 )
 

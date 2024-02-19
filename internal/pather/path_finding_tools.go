@@ -8,10 +8,10 @@ import (
 	"image/png"
 	"os"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/koolo/internal/helper"
 	"github.com/beefsack/go-astar"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/koolo/internal/helper"
 )
 
 // World is a two dimensional map of Tiles.

@@ -1,6 +1,6 @@
 package step
 
-import "github.com/Elanoran/d2go/pkg/data"
+import "github.com/hectorgimenez/d2go/pkg/data"
 
 type SyncActionStep struct {
 	basicStep

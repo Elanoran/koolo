@@ -1,11 +1,11 @@
 package run
 
 import (
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/koolo/internal/action"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/health"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/koolo/internal/action"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/health"
 )
 
 type Mausoleum struct {

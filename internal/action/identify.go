@@ -3,14 +3,14 @@ package action
 import (
 	"fmt"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/item"
-	"github.com/Elanoran/d2go/pkg/data/stat"
-	"github.com/Elanoran/koolo/internal/action/step"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/helper"
-	"github.com/Elanoran/koolo/internal/hid"
-	"github.com/Elanoran/koolo/internal/ui"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/item"
+	"github.com/hectorgimenez/d2go/pkg/data/stat"
+	"github.com/hectorgimenez/koolo/internal/action/step"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/hid"
+	"github.com/hectorgimenez/koolo/internal/ui"
 )
 
 func (b *Builder) IdentifyAll(skipIdentify bool) *Chain {
@@ -80,13 +80,13 @@ func (b *Builder) itemsToIdentify(d data.Data) (items []data.Item) {
 func identifyItem(idTome data.Item, i data.Item) {
 	screenPos := ui.GetScreenCoordsForItem(idTome)
 	hid.MovePointer(screenPos.X, screenPos.Y)
-	helper.Sleep(500)
+	helper.Sleep(350)
 	hid.Click(hid.RightButton)
-	helper.Sleep(1000)
+	helper.Sleep(200)
 
 	screenPos = ui.GetScreenCoordsForItem(i)
 	hid.MovePointer(screenPos.X, screenPos.Y)
-	helper.Sleep(1000)
+	helper.Sleep(300)
 	hid.Click(hid.LeftButton)
 	helper.Sleep(350)
 }

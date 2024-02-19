@@ -3,14 +3,14 @@ package run
 import (
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/d2go/pkg/data/npc"
-	"github.com/Elanoran/d2go/pkg/data/object"
-	"github.com/Elanoran/koolo/internal/action"
-	"github.com/Elanoran/koolo/internal/action/step"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/pather"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/d2go/pkg/data/npc"
+	"github.com/hectorgimenez/d2go/pkg/data/object"
+	"github.com/hectorgimenez/koolo/internal/action"
+	"github.com/hectorgimenez/koolo/internal/action/step"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/pather"
 )
 
 var baalThronePosition = data.Position{

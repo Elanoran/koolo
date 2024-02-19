@@ -5,12 +5,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/d2go/pkg/data/item"
-	"github.com/Elanoran/d2go/pkg/nip"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/d2go/pkg/data/item"
+	"github.com/hectorgimenez/d2go/pkg/nip"
 
-	"github.com/Elanoran/d2go/pkg/data/difficulty"
-	"github.com/Elanoran/d2go/pkg/data/stat"
+	"github.com/hectorgimenez/d2go/pkg/data/difficulty"
+	"github.com/hectorgimenez/d2go/pkg/data/stat"
 	"gopkg.in/yaml.v3"
 )
 

@@ -4,14 +4,14 @@ import (
 	"sort"
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/npc"
-	"github.com/Elanoran/d2go/pkg/data/skill"
-	"github.com/Elanoran/d2go/pkg/data/stat"
-	"github.com/Elanoran/koolo/internal/action"
-	"github.com/Elanoran/koolo/internal/action/step"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/pather"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/npc"
+	"github.com/hectorgimenez/d2go/pkg/data/skill"
+	"github.com/hectorgimenez/d2go/pkg/data/stat"
+	"github.com/hectorgimenez/koolo/internal/action"
+	"github.com/hectorgimenez/koolo/internal/action/step"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/pather"
 	"go.uber.org/zap"
 )
 

@@ -4,10 +4,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Elanoran/koolo/internal/action"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/health"
-	"github.com/Elanoran/koolo/internal/reader"
+	"github.com/hectorgimenez/koolo/internal/action"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/health"
+	"github.com/hectorgimenez/koolo/internal/reader"
 	"go.uber.org/zap"
 )
 

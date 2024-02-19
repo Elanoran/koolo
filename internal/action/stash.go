@@ -4,19 +4,19 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/d2go/pkg/data/area"
-	"github.com/Elanoran/d2go/pkg/data/item"
-	"github.com/Elanoran/d2go/pkg/data/object"
-	"github.com/Elanoran/d2go/pkg/data/stat"
-	"github.com/Elanoran/d2go/pkg/itemfilter"
-	"github.com/Elanoran/koolo/internal/action/step"
-	"github.com/Elanoran/koolo/internal/config"
-	stat2 "github.com/Elanoran/koolo/internal/event/stat"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/d2go/pkg/data/area"
+	"github.com/hectorgimenez/d2go/pkg/data/item"
+	"github.com/hectorgimenez/d2go/pkg/data/object"
+	"github.com/hectorgimenez/d2go/pkg/data/stat"
+	"github.com/hectorgimenez/d2go/pkg/itemfilter"
+	"github.com/hectorgimenez/koolo/internal/action/step"
+	"github.com/hectorgimenez/koolo/internal/config"
+	stat2 "github.com/hectorgimenez/koolo/internal/event/stat"
 
-	"github.com/Elanoran/koolo/internal/helper"
-	"github.com/Elanoran/koolo/internal/hid"
-	"github.com/Elanoran/koolo/internal/ui"
+	"github.com/hectorgimenez/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/hid"
+	"github.com/hectorgimenez/koolo/internal/ui"
 )
 
 const (
@@ -136,7 +136,7 @@ func (b *Builder) logStashItem(i data.Item) {
 	statsString := strings.Join(statsInfo, ", ")
 
 	// Construct the final textData
-	textData := fmt.Sprintf("Item %s [%d] stashed - Stats: %s", i.Name, i.Quality, statsString)
+	textData := fmt.Sprintf("Item %s [%s] stashed - Stats: %s", i.Name, i.Quality.ToString(), statsString)
 
 	// Insert item into DB Log
 	err := helper.DbLogText(textData)

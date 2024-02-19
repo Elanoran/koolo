@@ -3,7 +3,7 @@ package event
 import (
 	"image"
 
-	"github.com/Elanoran/koolo/internal/helper"
+	"github.com/hectorgimenez/koolo/internal/helper"
 )
 
 const (

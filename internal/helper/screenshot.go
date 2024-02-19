@@ -3,8 +3,8 @@ package helper
 import (
 	"image"
 
-	"github.com/Elanoran/koolo/internal/hid"
 	"github.com/go-vgo/robotgo"
+	"github.com/hectorgimenez/koolo/internal/hid"
 )
 
 func Screenshot() image.Image {

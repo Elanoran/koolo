@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/Elanoran/d2go/pkg/data/difficulty"
-	"github.com/Elanoran/koolo/internal/config"
-	"github.com/Elanoran/koolo/internal/hid"
-	"github.com/Elanoran/koolo/internal/reader"
-	"github.com/Elanoran/koolo/internal/ui"
+	"github.com/hectorgimenez/d2go/pkg/data/difficulty"
+	"github.com/hectorgimenez/koolo/internal/config"
+	"github.com/hectorgimenez/koolo/internal/hid"
+	"github.com/hectorgimenez/koolo/internal/reader"
+	"github.com/hectorgimenez/koolo/internal/ui"
 )
 
 type GameManager struct {

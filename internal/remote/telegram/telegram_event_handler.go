@@ -5,8 +5,8 @@ import (
 	"context"
 	"image/jpeg"
 
-	"github.com/Elanoran/koolo/internal/event"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"github.com/hectorgimenez/koolo/internal/event"
 )
 
 func (b *Bot) Handle(_ context.Context, m event.Message) error {

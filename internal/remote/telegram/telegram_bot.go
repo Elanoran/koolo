@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	koolo "github.com/Elanoran/koolo/internal"
-	"github.com/Elanoran/koolo/internal/event/stat"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	koolo "github.com/hectorgimenez/koolo/internal"
+	"github.com/hectorgimenez/koolo/internal/event/stat"
 	"go.uber.org/zap"
 )
 

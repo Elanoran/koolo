@@ -3,8 +3,8 @@ package step
 import (
 	"time"
 
-	"github.com/Elanoran/d2go/pkg/data"
-	"github.com/Elanoran/koolo/internal/hid"
+	"github.com/hectorgimenez/d2go/pkg/data"
+	"github.com/hectorgimenez/koolo/internal/hid"
 )
 
 type KeySequenceStep struct {
